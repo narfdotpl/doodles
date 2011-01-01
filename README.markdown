@@ -3,6 +3,10 @@ doodles
 
 hacks that may just be abstract shapes
 
+ - [`@not_your_camelcase_test_case`][nyctc] -- `unittest.TestCase` decorator
+
+  [nyctc]: https://github.com/narfdotpl/doodles/blob/master/doodles/nyctc.py
+
 
 noodles
 -------
