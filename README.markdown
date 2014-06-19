@@ -3,19 +3,15 @@ doodles
 
 hacks that may just be abstract shapes
 
- - [ORMish `eval()` application][ormish_eval]
- - [`mfilter()`][mfilter] -- multi-predicate `filter()`
- - [`@not_your_camelcase_test_case`][nyctc] -- `unittest.TestCase` decorator
-
-  [ormish_eval]: https://github.com/narfdotpl/doodles/blob/master/doodles/ormish_eval.py
-  [mfilter]: https://github.com/narfdotpl/doodles/blob/master/doodles/mfilter.py
-  [nyctc]: https://github.com/narfdotpl/doodles/blob/master/doodles/nyctc.py
+- [ORMish `eval()` application](doodles/ormish_eval.py)
+- [`mfilter()`](doodles/mfilter.py) — multi-predicate `filter()`
+- [`@not_your_camelcase_test_case`](doodles/nyctc.py) -- `unittest.TestCase` decorator
 
 
-noodles
+dnoodles
 -------
 
-[![noodles](http://dl.dropbox.com/u/2618196/dnoodles.svg)](https://gist.github.com/639250)
+[![dnoodles](http://dl.dropbox.com/u/2618196/dnoodles.svg)](https://gist.github.com/narfdotpl/639250)
 
 
 meta
