@@ -6,6 +6,7 @@ hacks that may just be abstract shapes
 - [ORMish `eval()` application](doodles/ormish_eval.py)
 - [`mfilter()`](doodles/mfilter.py) — multi-predicate `filter()`
 - [`@not_your_camelcase_test_case`](doodles/nyctc.py) -- `unittest.TestCase` decorator
+- [One File Django App](doodles/django1.py)
 
 
 dnoodles
