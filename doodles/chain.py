@@ -35,6 +35,24 @@ def chain_iterative(seq, *args):
     return seq
 
 
+def _make_chainable_method(fun, base):
+    def f(*args, **kwargs):
+        fargs = args + (base,)
+        return Chainable(fun(*fargs, **kwargs))
+    return f
+
+
+class Chainable:
+    def __init__(self, obj):
+        self.base = obj
+
+    def __getattr__(self, name):
+        f = eval(name)
+        if not hasattr(f, '__call__'):
+            raise AttributeError
+        return _make_chainable_method(f, self.base)
+
+
 def _main():
     # Get email domains of active users ("gmail.com" and "rodriguez.name").
     # Try different approaches.
@@ -73,6 +91,13 @@ def _main():
         (filter, lambda x: x.is_active),
         (map,    lambda x: x.email.split('@')[-1]),
         set)
+
+    # 6. Javascript style OOP with dynamic methods
+    print Chainable(users) \
+        .filter(lambda x: x.is_active) \
+        .map(lambda x: x.email.split('@')[-1]) \
+        .set() \
+        .base
 
 if __name__ == '__main__':
     _main()
