@@ -4,8 +4,6 @@
 Multi-predicate filter().
 """
 
-__author__ = 'Maciej Konieczny <hello@narf.pl>'
-
 
 def mfilter(*args):
     *predicates, iterable = args

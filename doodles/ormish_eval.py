@@ -5,8 +5,6 @@ ORMish eval() doodle inspired by
 http://6.flowsnake.org/custom-namespace.html
 """
 
-__author__ = 'Maciej Konieczny <hello@narf.pl>'
-
 
 class Model(object):
 

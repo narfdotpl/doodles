@@ -8,8 +8,6 @@ unittest.TestCase's javaism.
 import re
 
 
-__author__ = 'Maciej Konieczny <hello@narf.pl>'
-
 _x = re.compile(r'_[a-z]')
 _x2X = lambda _x: _x.group()[1].upper()
 
