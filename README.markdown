@@ -7,7 +7,7 @@ hacks that may just be abstract shapes
 - [`mfilter()`](doodles/mfilter.py) — multi-predicate `filter()`
 - [`@not_your_camelcase_test_case`](doodles/nyctc.py) -- `unittest.TestCase` decorator
 - [One File Django App](doodles/django1.py)
-- [Function chaining](doodles/chain.py)
+- Function chaining in [Python](doodles/chain.py) and [Swift](doodles/chain.swift)
 
 
 dnoodles
