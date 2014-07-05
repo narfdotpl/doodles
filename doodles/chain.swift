@@ -1,5 +1,14 @@
 // Function chaining operator experiment.
 //
+// Write
+//
+//     x => f => g => h
+//
+// instead of
+//
+//     h(g(f(x)))
+//
+//
 // Tested in Xcode 6 Beta 2.
 // Sort of works, but not really. :(
 
