@@ -9,8 +9,7 @@
 //     h(g(f(x)))
 //
 //
-// Tested in Xcode 6 Beta 2.
-// Sort of works, but not really. :(
+// Tested in Xcode 6 Beta 3.
 
 
 
@@ -33,16 +32,16 @@ extension Array {
 }
 
 extension String {
-    func split(separator: Character) -> String[] {
+    func split(separator: Character) -> [String] {
         func splitOnce(s: String) -> (head: String, tail: String?) {
             if let index = find(s, separator) {
-                return (s[s.startIndex..index], s[index.succ()..s.endIndex])
+                return (s[s.startIndex..<index], s[index.successor()..<s.endIndex])
             } else {
                 return (s, nil)
             }
         }
 
-        var segments: String[] = []
+        var segments: [String] = []
 
         var head = self
         var tail: String?
@@ -62,15 +61,15 @@ extension String {
     }
 }
 
-func uniq<T: Hashable>(xs: T[]) -> T[] {
+func uniq<S: Sequence, T: Hashable where T == S.GeneratorType.Element>(xs: S) -> [T] {
     // create dictionary using `xs` as keys
-    var d = Dictionary<T, Bool>()
+    var d: [T: Bool] = [:]
     for x in xs {
         d[x] = false
     }
 
     // get dictionary keys as T[]
-    var keys: T[] = []
+    var keys: [T] = []
     for key in d.keys {
         keys += key
     }
@@ -104,13 +103,9 @@ let users = [
 ]
 
 // using only functions, without chaining
-//
-// error: could not find member 'split'
 println(uniq(map(filter(users) { $0.isActive }, { $0.email.split("@").last })))
 
 // using only functions, with chaining
-//
-// error: could not find member 'split'
 println(
     users =>
         { filter($0) { $0.isActive }} =>
