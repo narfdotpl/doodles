@@ -9,27 +9,21 @@
 //     h(g(f(x)))
 //
 //
-// Tested in Xcode 6 Beta 3.
+// Tested in Xcode 6 Beta 5.
 
 
 
 //  Operator
 
-operator infix => { associativity left }
+infix operator => { associativity left }
 
-@infix func => <T, U> (x: T, f: (T) -> U) -> U {
+func => <T, U> (x: T, f: (T) -> U) -> U {
     return f(x)
 }
 
 
 
 // Preparation for demo
-
-extension Array {
-    var last: T {
-        return self[self.endIndex - 1]
-    }
-}
 
 extension String {
     func split(separator: Character) -> [String] {
@@ -50,7 +44,7 @@ extension String {
             (head, tail) = splitOnce(head)
             segments.append(head)
 
-            if tail {
+            if tail != nil {
                 head = tail!
             } else {
                 break
@@ -61,20 +55,14 @@ extension String {
     }
 }
 
-func uniq<S: Sequence, T: Hashable where T == S.GeneratorType.Element>(xs: S) -> [T] {
+func uniq<S: SequenceType, T: Hashable where T == S.Generator.Element>(xs: S) -> [T] {
     // create dictionary using `xs` as keys
     var d: [T: Bool] = [:]
     for x in xs {
         d[x] = false
     }
 
-    // get dictionary keys as T[]
-    var keys: [T] = []
-    for key in d.keys {
-        keys += key
-    }
-
-    return keys
+    return Array(d.keys)
 }
 
 
@@ -103,13 +91,13 @@ let users = [
 ]
 
 // using only functions, without chaining
-println(uniq(map(filter(users) { $0.isActive }, { $0.email.split("@").last })))
+println(uniq(map(filter(users) { $0.isActive }, { $0.email.split("@").last! })))
 
 // using only functions, with chaining
 println(
     users =>
         { filter($0) { $0.isActive }} =>
-        { map($0) { $0.email.split("@").last }} =>
+        { map($0) { $0.email.split("@").last! }} =>
         uniq
 )
 
@@ -118,7 +106,7 @@ println(
     uniq(
         users
             .filter { $0.isActive }
-            .map { $0.email.split("@").last }
+            .map { $0.email.split("@").last! }
     )
 )
 
@@ -126,6 +114,6 @@ println(
 println(
     users
         .filter { $0.isActive }
-        .map { $0.email.split("@").last } =>
+        .map { $0.email.split("@").last! } =>
         uniq
 )

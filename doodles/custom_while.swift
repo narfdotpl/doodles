@@ -5,9 +5,9 @@
 // http://matt.might.net/articles/implementing-laziness/
 // :)
 //
-// Tested in Xcode 6 Beta 4.
+// Tested in Xcode 6 Beta 5.
 
-func customWhile(condition: @auto_closure () -> Bool, body: () -> ()) {
+func customWhile(condition: @autoclosure () -> Bool, body: () -> ()) {
     if condition() {
         body()
         // "funny" that both `condition()` and `condition` work...
@@ -24,21 +24,20 @@ customWhile(i > 0) {
 }
 
 
-// It seems that the compiler performs tail call optimisation, starting from
-// optimisation level 1.
+// It seems that the compiler performs tail call optimisation.
 //
 // With no optimisation, it crashes:
 //
-//     > xcrun swift -i custom_while.swift
+//     > xcrun swift custom_while.swift
 //     ...
 //     261721
 //     261722
 //     261723
-//     zsh: segmentation fault  xcrun swift -i custom_while.swift
+//     zsh: segmentation fault  xcrun swift custom_while.swift
 //
 // With optimisation it goes on and on:
 //
-//     > xcrun swift -O1 -i custom_while.swift
+//     > xcrun swift -O custom_while.swift
 //     ...
 //     5671260
 //     5671261
