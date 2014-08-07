@@ -46,7 +46,7 @@ extension String {
         var head = self
         var tail: String?
 
-        while (true) {
+        while true {
             (head, tail) = splitOnce(head)
             segments.append(head)
 
