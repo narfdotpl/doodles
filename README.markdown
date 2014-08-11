@@ -1,14 +1,14 @@
 doodles
 =======
 
-hacks that may just be abstract shapes
+hacks that may just be abstract shapes (newest first)
 
-- [ORMish `eval()` application](doodles/ormish_eval.py)
-- [`mfilter()`](doodles/mfilter.py) — multi-predicate `filter()`
-- [`@not_your_camelcase_test_case`](doodles/nyctc.py) -- `unittest.TestCase` decorator
-- [One File Django App](doodles/django1.py)
-- Function chaining in [Python](doodles/chain.py) and [Swift](doodles/chain.swift)
 - [Custom `while`](doodles/custom_while.swift)
+- Function chaining in [Python](doodles/chain.py) and [Swift](doodles/chain.swift)
+- [One File Django App](doodles/django1.py)
+- [`@not_your_camelcase_test_case`](doodles/nyctc.py) -- `unittest.TestCase` decorator
+- [`mfilter()`](doodles/mfilter.py) — multi-predicate `filter()`
+- [ORMish `eval()` application](doodles/ormish_eval.py)
 
 
 dnoodles
