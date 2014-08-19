@@ -5,7 +5,7 @@
 // http://matt.might.net/articles/implementing-laziness/
 // :)
 //
-// Tested in Xcode 6 Beta 5.
+// Tested in Xcode 6 Beta 6.
 
 func customWhile(condition: @autoclosure () -> Bool, body: () -> ()) {
     if condition() {
