@@ -9,7 +9,7 @@
 //     h(g(f(x)))
 //
 //
-// Tested in Xcode 6 Beta 7.
+// Tested in Xcode 6.1.
 
 
 
