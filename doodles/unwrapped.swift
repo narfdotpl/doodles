@@ -8,75 +8,165 @@
 //   [Argo]: https://github.com/thoughtbot/Argo
 //
 
-func unwrapped<T1, T2>(x1: T1?, x2: T2?) -> (T1, T2)? {
-    if x1 != nil && x2 != nil {
-        return (x1!, x2!)
-    } else {
-        return nil
+func unwrapped<T1, T2>(x1: T1?, x2: @autoclosure () -> T2?) -> (T1, T2)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            return (x1, x2)
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3>(x1: T1?, x2: T2?, x3: T3?) -> (T1, T2, T3)? {
-    if x1 != nil && x2 != nil && x3 != nil {
-        return (x1!, x2!, x3!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?) -> (T1, T2, T3)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                return (x1, x2, x3)
+            }
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3, T4>(x1: T1?, x2: T2?, x3: T3?, x4: T4?) -> (T1, T2, T3, T4)? {
-    if x1 != nil && x2 != nil && x3 != nil && x4 != nil {
-        return (x1!, x2!, x3!, x4!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3, T4>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?, x4: @autoclosure () -> T4?) -> (T1, T2, T3, T4)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                if let x4 = x4() {
+                    return (x1, x2, x3, x4)
+                }
+            }
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3, T4, T5>(x1: T1?, x2: T2?, x3: T3?, x4: T4?, x5: T5?) -> (T1, T2, T3, T4, T5)? {
-    if x1 != nil && x2 != nil && x3 != nil && x4 != nil && x5 != nil {
-        return (x1!, x2!, x3!, x4!, x5!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3, T4, T5>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?, x4: @autoclosure () -> T4?, x5: @autoclosure () -> T5?) -> (T1, T2, T3, T4, T5)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                if let x4 = x4() {
+                    if let x5 = x5() {
+                        return (x1, x2, x3, x4, x5)
+                    }
+                }
+            }
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3, T4, T5, T6>(x1: T1?, x2: T2?, x3: T3?, x4: T4?, x5: T5?, x6: T6?) -> (T1, T2, T3, T4, T5, T6)? {
-    if x1 != nil && x2 != nil && x3 != nil && x4 != nil && x5 != nil && x6 != nil {
-        return (x1!, x2!, x3!, x4!, x5!, x6!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3, T4, T5, T6>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?, x4: @autoclosure () -> T4?, x5: @autoclosure () -> T5?, x6: @autoclosure () -> T6?) -> (T1, T2, T3, T4, T5, T6)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                if let x4 = x4() {
+                    if let x5 = x5() {
+                        if let x6 = x6() {
+                            return (x1, x2, x3, x4, x5, x6)
+                        }
+                    }
+                }
+            }
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3, T4, T5, T6, T7>(x1: T1?, x2: T2?, x3: T3?, x4: T4?, x5: T5?, x6: T6?, x7: T7?) -> (T1, T2, T3, T4, T5, T6, T7)? {
-    if x1 != nil && x2 != nil && x3 != nil && x4 != nil && x5 != nil && x6 != nil && x7 != nil {
-        return (x1!, x2!, x3!, x4!, x5!, x6!, x7!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3, T4, T5, T6, T7>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?, x4: @autoclosure () -> T4?, x5: @autoclosure () -> T5?, x6: @autoclosure () -> T6?, x7: @autoclosure () -> T7?) -> (T1, T2, T3, T4, T5, T6, T7)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                if let x4 = x4() {
+                    if let x5 = x5() {
+                        if let x6 = x6() {
+                            if let x7 = x7() {
+                                return (x1, x2, x3, x4, x5, x6, x7)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3, T4, T5, T6, T7, T8>(x1: T1?, x2: T2?, x3: T3?, x4: T4?, x5: T5?, x6: T6?, x7: T7?, x8: T8?) -> (T1, T2, T3, T4, T5, T6, T7, T8)? {
-    if x1 != nil && x2 != nil && x3 != nil && x4 != nil && x5 != nil && x6 != nil && x7 != nil && x8 != nil {
-        return (x1!, x2!, x3!, x4!, x5!, x6!, x7!, x8!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3, T4, T5, T6, T7, T8>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?, x4: @autoclosure () -> T4?, x5: @autoclosure () -> T5?, x6: @autoclosure () -> T6?, x7: @autoclosure () -> T7?, x8: @autoclosure () -> T8?) -> (T1, T2, T3, T4, T5, T6, T7, T8)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                if let x4 = x4() {
+                    if let x5 = x5() {
+                        if let x6 = x6() {
+                            if let x7 = x7() {
+                                if let x8 = x8() {
+                                    return (x1, x2, x3, x4, x5, x6, x7, x8)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3, T4, T5, T6, T7, T8, T9>(x1: T1?, x2: T2?, x3: T3?, x4: T4?, x5: T5?, x6: T6?, x7: T7?, x8: T8?, x9: T9?) -> (T1, T2, T3, T4, T5, T6, T7, T8, T9)? {
-    if x1 != nil && x2 != nil && x3 != nil && x4 != nil && x5 != nil && x6 != nil && x7 != nil && x8 != nil && x9 != nil {
-        return (x1!, x2!, x3!, x4!, x5!, x6!, x7!, x8!, x9!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3, T4, T5, T6, T7, T8, T9>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?, x4: @autoclosure () -> T4?, x5: @autoclosure () -> T5?, x6: @autoclosure () -> T6?, x7: @autoclosure () -> T7?, x8: @autoclosure () -> T8?, x9: @autoclosure () -> T9?) -> (T1, T2, T3, T4, T5, T6, T7, T8, T9)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                if let x4 = x4() {
+                    if let x5 = x5() {
+                        if let x6 = x6() {
+                            if let x7 = x7() {
+                                if let x8 = x8() {
+                                    if let x9 = x9() {
+                                        return (x1, x2, x3, x4, x5, x6, x7, x8, x9)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
+    return nil
 }
 
-func unwrapped<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(x1: T1?, x2: T2?, x3: T3?, x4: T4?, x5: T5?, x6: T6?, x7: T7?, x8: T8?, x9: T9?, x10: T10?) -> (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10)? {
-    if x1 != nil && x2 != nil && x3 != nil && x4 != nil && x5 != nil && x6 != nil && x7 != nil && x8 != nil && x9 != nil && x10 != nil {
-        return (x1!, x2!, x3!, x4!, x5!, x6!, x7!, x8!, x9!, x10!)
-    } else {
-        return nil
+func unwrapped<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(x1: T1?, x2: @autoclosure () -> T2?, x3: @autoclosure () -> T3?, x4: @autoclosure () -> T4?, x5: @autoclosure () -> T5?, x6: @autoclosure () -> T6?, x7: @autoclosure () -> T7?, x8: @autoclosure () -> T8?, x9: @autoclosure () -> T9?, x10: @autoclosure () -> T10?) -> (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10)? {
+    if let x1 = x1 {
+        if let x2 = x2() {
+            if let x3 = x3() {
+                if let x4 = x4() {
+                    if let x5 = x5() {
+                        if let x6 = x6() {
+                            if let x7 = x7() {
+                                if let x8 = x8() {
+                                    if let x9 = x9() {
+                                        if let x10 = x10() {
+                                            return (x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
+    return nil
 }
 

@@ -3,8 +3,41 @@ func type(i: Int) -> String {
 }
 
 
+func argumentType(i: Int) -> String {
+    let t = type(i)
+
+    if i == 1 {
+        return "\(t)?"
+    } else {
+        return "@autoclosure () -> \(t)?"
+    }
+}
+
+
 func variable(i: Int) -> String {
     return "x\(i)"
+}
+
+
+func access(i: Int) -> String {
+    let v = variable(i)
+
+    if i == 1 {
+        return v
+    } else {
+        return "\(v)()"
+    }
+}
+
+
+func indent(level: Int) -> String {
+    var s = ""
+
+    for _ in 0 ..< level {
+        s += "    "
+    }
+
+    return s
 }
 
 
@@ -17,14 +50,29 @@ for iMax in 2 ... 10 {
     print("func unwrapped<")
     print(", ".join(indices.map(type)))
     print(">(")
-    print(", ".join(indices.map { "\(variable($0)): \(type($0))?" }))
+    print(", ".join(indices.map { "\(variable($0)): \(argumentType($0))" }))
     print(") -> (")
     print(", ".join(indices.map(type)))
     print(")? {\n")
-    print("    if ")
-    print(" && ".join(indices.map { "\(variable($0)) != nil" }))
-    print(" {\n        return (")
-    print(", ".join(indices.map { "\(variable($0))!" }))
-    print(")\n    } else {\n        return nil\n    }\n")
-    print("}\n\n")
+
+    var level = 1
+
+    for i in indices {
+        print(indent(level))
+        print("if let \(variable(i)) = \(access(i)) {\n")
+        level += 1
+    }
+
+    print(indent(level))
+    print("return (")
+    print(", ".join(indices.map(variable)))
+    print(")\n")
+
+    while level > 1 {
+        level -= 1
+        print(indent(level))
+        print("}\n")
+    }
+
+    print("\n    return nil\n}\n\n")
 }
