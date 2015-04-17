@@ -3,6 +3,7 @@ doodles
 
 hacks that may just be abstract shapes (newest first)
 
+- [Alternative](doodles/alternative.swift)
 - [Multiple optionals `unwrapped` at once](doodles/unwrapped.swift)
 - [Custom `while`](doodles/custom_while.swift)
 - Function chaining in [Python](doodles/chain.py) and [Swift](doodles/chain.swift)
