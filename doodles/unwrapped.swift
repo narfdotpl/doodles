@@ -1,3 +1,6 @@
+// 2015-04-17 update: this is made obsolete by Swift 1.2 `if let` with
+// multiple optionals.
+//
 // This is how I try to deal with deserialization of JSON objects
 // with multiple properties using [SwiftyJSON][] (read: without going
 // full [Argo][]).

@@ -10,6 +10,8 @@
 //
 //
 // Tested in Xcode 6.1.
+//
+// 2015-04-17 udpdate: I use `|>` from https://github.com/robrix/Prelude
 
 
 
