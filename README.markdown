@@ -3,6 +3,8 @@ doodles
 
 hacks that may just be abstract shapes (newest first)
 
+- [`mutate`](doodles/mutate.swift) helper to go along with `|>`
+  application operator
 - [Alternative](doodles/alternative.swift)
 - [Multiple optionals `unwrapped` at once](doodles/unwrapped.swift)
 - [Custom `while`](doodles/custom_while.swift)
